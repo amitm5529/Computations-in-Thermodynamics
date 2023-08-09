@@ -7,8 +7,9 @@ T = zeros();
 x = zeros();
 y = zeros();
 
-T1 = B1/(A1-log(P))-C1;
-T2 = B2/(A2-log(P))-C2;
+(* T1 = B1/(A1-log(P))-C1;
+T2 = B2/(A2-log(P))-C2; *)
+
 T = 5:0.33:90;
 gamma1 = zeros();
 gamma2 = zeros();
@@ -19,7 +20,8 @@ gamma2 = exp(A21*(A12*x./(A12*x+A21*(1-x)))^2);
     Psat2(i) = exp(A2-B2/(C2+T(i)));    
  end
 
- x = 0:0.01:1;
+(*  x = 0:0.01:1; *)
+
 x = (P-Psat2.*gamma2)./(Psat1.*gamma1-Psat2.*gamma2);
 y = x.*Psat1.*gamma1/P;
 figure
